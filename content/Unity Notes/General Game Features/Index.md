@@ -8,4 +8,5 @@ longform:
     - Resolution Manager Notes
   sceneTemplate: templates/chapter.md
   ignoredFiles: []
+"draft: true": true
 ---

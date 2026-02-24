@@ -4,12 +4,10 @@ longform:
   title: Unity Notes
   workflow: Default Workflow
   sceneFolder: Coursera Notes
-  scenes:
-    - Snowball Fight Note
-    - Introduction
+  scenes: []
   sceneTemplate: templates/chapter.md
   ignoredFiles:
     - 
     - 
-draft: true
+"draft: true": true
 ---
