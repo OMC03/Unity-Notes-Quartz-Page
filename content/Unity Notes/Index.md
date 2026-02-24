@@ -9,5 +9,5 @@ longform:
   ignoredFiles:
     - 
     - 
-"draft: true": true
+draft: true
 ---
