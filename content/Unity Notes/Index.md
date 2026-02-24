@@ -4,6 +4,8 @@ longform:
   title: Unity Notes
   workflow: Default Workflow
   sceneFolder: /
-  scenes: []
+  scenes:
+    - Introduction
+  sceneTemplate: templates/chapter.md
   ignoredFiles: []
 ---
