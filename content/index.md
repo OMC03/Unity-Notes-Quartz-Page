@@ -1,6 +1,5 @@
 ---
-title: Welcome to Quartz
+title: OMC03 Unity Notes
 ---
 
-This is a blank Quartz installation.
-See the [documentation](https://quartz.jzhao.xyz) for how to get started.
+Welcome to my page! Here you can find all of the notes I have done for some of my Unity projects. I try to update this as I create more.
