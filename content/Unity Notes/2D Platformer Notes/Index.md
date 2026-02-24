@@ -8,4 +8,5 @@ longform:
     - 2D Unity Game Project Notes
   sceneTemplate: templates/chapter.md
   ignoredFiles: []
+"draft: true": true
 ---
