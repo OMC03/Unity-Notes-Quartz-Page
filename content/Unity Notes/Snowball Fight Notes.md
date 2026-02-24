@@ -1,6 +1,6 @@
 ---
 "title:": Snowball Fight Notes
-"draft: false": false
+"draft: false": true
 tags:
 ---
 ## 2P Map Creation
