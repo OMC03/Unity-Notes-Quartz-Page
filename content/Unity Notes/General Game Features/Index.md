@@ -8,8 +8,8 @@ longform:
     - Snowball Fight Notes
     - 2D Unity Game Project Notes
     - Coursera Unity Notes
+    - Resolution Manager Notes
     - Introduction
-    - General Game Features
   sceneTemplate: templates/chapter.md
   ignoredFiles: []
 ---
