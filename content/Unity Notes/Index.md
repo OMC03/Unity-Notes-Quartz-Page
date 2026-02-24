@@ -9,7 +9,7 @@ longform:
     - 2D Unity Game Project Notes
     - Coursera Unity Notes
     - Introduction
-    - General Game Features
   sceneTemplate: templates/chapter.md
-  ignoredFiles: []
+  ignoredFiles:
+    - 
 ---
