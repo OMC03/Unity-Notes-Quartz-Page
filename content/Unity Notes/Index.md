@@ -5,11 +5,11 @@ longform:
   workflow: Default Workflow
   sceneFolder: /
   scenes:
-    - Introduction
     - Snowball Fight Notes
     - 2D Unity Game Project Notes
     - Coursera Unity Notes
     - General Game Features
+    - Introduction
   sceneTemplate: templates/chapter.md
   ignoredFiles: []
 ---

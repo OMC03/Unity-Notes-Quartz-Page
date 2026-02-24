@@ -1,7 +1,3 @@
----
-share_link: https://share.note.sx/7d6zbus6#Iet7DhPLNUnfCLDV9BmbkPTJKhajWh5gl7Y8fmc/A6s
-share_updated: 2025-10-21T21:48:30-07:00
----
 ## Getting Started
 
 **Here is a tutorial to get started with setting up Unity and learning the interface, along with my git hub repository on this project and an export if you would like to play it for yourself**
