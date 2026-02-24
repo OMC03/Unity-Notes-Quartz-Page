@@ -3,13 +3,12 @@ longform:
   format: scenes
   title: Unity Notes
   workflow: Default Workflow
-  sceneFolder: /
+  sceneFolder: Coursera Notes
   scenes:
-    - Snowball Fight Notes
-    - 2D Unity Game Project Notes
-    - Coursera Unity Notes
+    - Snowball Fight Note
     - Introduction
   sceneTemplate: templates/chapter.md
   ignoredFiles:
+    - 
     - 
 ---

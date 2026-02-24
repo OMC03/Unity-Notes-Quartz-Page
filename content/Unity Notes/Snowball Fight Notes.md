@@ -1,3 +1,9 @@
+---
+"title:": Snowball Fight Notes
+"draft: false": true
+tags:
+  - inDevelopment
+---
 ## 2P Map Creation
 
 In this set of notes We will create a 2 player game. This will slightly involve different code and mechanics than our 2D platformer. This is to accommodate a 2 player environment.

@@ -3,4 +3,4 @@
 "draft: false": false
 tags:
 ---
-The introduction goes here.
+Welcome to my Notes section of my page!
