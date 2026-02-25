@@ -19,6 +19,7 @@ export type ContentDetails = {
   richContent?: string
   date?: Date
   description?: string
+  explorerexclude?: boolean
 }
 
 interface Options {
@@ -115,6 +116,8 @@ export const ContentIndex: QuartzEmitterPlugin<Partial<Options>> = (opts) => {
               : undefined,
             date: date,
             description: file.data.description ?? "",
+            // Use the Boolean() constructor to force the value to be true or false
+            explorerexclude: Boolean(file.data.frontmatter?.explorerexclude) ?? false,
           })
         }
       }
