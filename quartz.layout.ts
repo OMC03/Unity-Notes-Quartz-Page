@@ -40,10 +40,17 @@ export const defaultContentPageLayout: PageLayout = {
     }),
     Component.Explorer({
       filterFn: (node) => {
-        // exclude files with the tag "explorerexclude"
-        return node.data?.tags?.includes("explorerexclude") !== true
+        // 1. Get the tags, ensuring we have an array to work with
+        const tags = node.data?.tags ?? []
+
+        // 2. Look for the tag. Using 'some' or 'includes' works, 
+        // but we want to be sure it's not the folder itself we're checking.
+        const isExcluded = tags.includes("explorerexclude")
+
+        // 3. Return true to KEEP the node, false to HIDE it
+        return !isExcluded
       },
-    })
+    }),
   ],
   right: [
     Component.Graph(),
@@ -69,10 +76,17 @@ export const defaultListPageLayout: PageLayout = {
     }),
     Component.Explorer({
       filterFn: (node) => {
-        // exclude files with the tag "explorerexclude"
-        return node.data?.tags?.includes("explorerexclude") !== true
+        // 1. Get the tags, ensuring we have an array to work with
+        const tags = node.data?.tags ?? []
+
+        // 2. Look for the tag. Using 'some' or 'includes' works, 
+        // but we want to be sure it's not the folder itself we're checking.
+        const isExcluded = tags.includes("explorerexclude")
+
+        // 3. Return true to KEEP the node, false to HIDE it
+        return !isExcluded
       },
-    })
+    }),
   ],
   right: [],
 }
