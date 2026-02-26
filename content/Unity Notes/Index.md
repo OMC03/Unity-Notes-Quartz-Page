@@ -9,5 +9,5 @@ longform:
   ignoredFiles:
     - 
     - 
-"explorerexclude: true": true
+"explorerexclude:": true
 ---
