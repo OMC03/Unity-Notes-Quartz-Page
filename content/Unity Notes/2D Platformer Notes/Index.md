@@ -8,6 +8,5 @@ longform:
     - 2D Unity Game Project Notes
   sceneTemplate: templates/chapter.md
   ignoredFiles: []
-tags:
-  - explorerexclude
+"explorerexclude: true": true
 ---
