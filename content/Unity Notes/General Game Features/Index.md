@@ -8,4 +8,6 @@ longform:
     - Resolution Manager Notes
   sceneTemplate: templates/chapter.md
   ignoredFiles: []
+tags:
+  - explorerexclude
 ---

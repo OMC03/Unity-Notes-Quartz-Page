@@ -9,4 +9,6 @@ longform:
   ignoredFiles:
     - 
     - 
+tags:
+  - explorerexclude
 ---
