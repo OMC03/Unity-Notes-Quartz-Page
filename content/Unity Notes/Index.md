@@ -3,7 +3,7 @@ longform:
   format: scenes
   title: Unity Notes
   workflow: Default Workflow
-  sceneFolder: Coursera Notes
+  sceneFolder: /
   scenes:
     - Coursera Unity Notes
     - Index

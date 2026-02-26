@@ -6,6 +6,7 @@ longform:
   sceneFolder: /
   scenes:
     - Dialogue System Notes
+  sceneTemplate: templates/chapter.md
   ignoredFiles: []
 tags:
   - explorerexclude
