@@ -2,7 +2,7 @@
 tags:
   - indevelopment
 ---
-**Disclaimer:** Before starting with these set of notes it is assumed that you have a basic knowledge of the Unity Engine/C# scripting and a basic understanding of Object Oriented Programming.
+**Disclaimer: Before starting with these set of notes it is assumed that you have a basic knowledge of the Unity Engine/C# scripting and a basic understanding of Object Oriented Programming.**
 ## Dialogue Script
 
 Here is where the 
