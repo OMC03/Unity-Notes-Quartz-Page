@@ -8,5 +8,4 @@ longform:
     - Coursera Unity Notes
   sceneTemplate: templates/chapter.md
   ignoredFiles: []
-"explorerexclude: true": true
 ---
