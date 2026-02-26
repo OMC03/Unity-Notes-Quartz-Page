@@ -116,7 +116,8 @@ export const ContentIndex: QuartzEmitterPlugin<Partial<Options>> = (opts) => {
               : undefined,
             date: date,
             description: file.data.description ?? "",
-            explorerexclude: Boolean(file.data.frontmatter?.explorerexclude) ?? false,
+            explorerexclude: file.data.frontmatter?.explorerexclude === true || 
+            file.data.frontmatter?.explorerexclude === "true",
           })
         }
       }
