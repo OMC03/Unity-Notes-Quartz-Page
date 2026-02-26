@@ -39,10 +39,9 @@ export const defaultContentPageLayout: PageLayout = {
       ],
     }),
     Component.Explorer({
+      title: "Explorer",
       filterFn: (node) => {
-        // The 'as any' cast is the fix for the missing type definition error
-        const data = node.data as any
-        return data?.explorerexclude !== true
+        return node.data?.explorerexclude !== true
       },
     }),
   ],
@@ -69,10 +68,9 @@ export const defaultListPageLayout: PageLayout = {
       ],
     }),
     Component.Explorer({
+      title: "Explorer",
       filterFn: (node) => {
-        // The 'as any' cast is the fix for the missing type definition error
-        const data = node.data as any
-        return data?.explorerexclude !== true
+        return node.data?.explorerexclude !== true
       },
     }),
   ],
