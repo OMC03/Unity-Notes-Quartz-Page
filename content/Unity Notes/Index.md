@@ -4,7 +4,9 @@ longform:
   title: Unity Notes
   workflow: Default Workflow
   sceneFolder: Coursera Notes
-  scenes: []
+  scenes:
+    - Coursera Unity Notes
+    - Index
   sceneTemplate: templates/chapter.md
   ignoredFiles:
     - 
