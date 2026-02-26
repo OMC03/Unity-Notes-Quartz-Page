@@ -40,8 +40,9 @@ export const defaultContentPageLayout: PageLayout = {
     }),
     Component.Explorer({
       filterFn: (node) => {
-        // Now that you've registered the property, it's available directly on the node data
-        return node.data?.explorerexclude !== true
+        // The 'as any' cast is the fix for the missing type definition error
+        const data = node.data as any
+        return data?.explorerexclude !== true
       },
     }),
   ],
@@ -69,8 +70,9 @@ export const defaultListPageLayout: PageLayout = {
     }),
     Component.Explorer({
       filterFn: (node) => {
-        // Now that you've registered the property, it's available directly on the node data
-        return node.data?.explorerexclude !== true
+        // The 'as any' cast is the fix for the missing type definition error
+        const data = node.data as any
+        return data?.explorerexclude !== true
       },
     }),
   ],
