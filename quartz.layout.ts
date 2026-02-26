@@ -39,8 +39,8 @@ export const defaultContentPageLayout: PageLayout = {
       ],
     }),
     Component.Explorer({
-      title: "Explorer",
       filterFn: (node) => {
+        // Now that you've registered the property, it's available directly on the node data
         return node.data?.explorerexclude !== true
       },
     }),
@@ -67,9 +67,9 @@ export const defaultListPageLayout: PageLayout = {
         { Component: Component.Darkmode() },
       ],
     }),
-        Component.Explorer({
-      title: "Explorer",
+    Component.Explorer({
       filterFn: (node) => {
+        // Now that you've registered the property, it's available directly on the node data
         return node.data?.explorerexclude !== true
       },
     }),
