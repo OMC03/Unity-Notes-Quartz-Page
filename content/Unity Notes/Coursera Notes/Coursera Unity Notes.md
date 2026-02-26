@@ -1,7 +1,3 @@
----
-quickshare-date: 2024-04-29 11:01:08
-quickshare-url: "https://noteshare.space/note/clvl9mpy3560001mwg5rywxgf#YHcT0wfZFGv4Ri2nIBJFLCzHdTw6aK6ZmPQG3UeLo0s"
----
 # Week 1
 ## Overview
 
