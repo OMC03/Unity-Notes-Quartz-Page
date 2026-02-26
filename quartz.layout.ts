@@ -39,11 +39,11 @@ export const defaultContentPageLayout: PageLayout = {
       ],
     }),
     Component.Explorer({
-      title: "Explorer",
       filterFn: (node) => {
-        return node.data?.explorerexclude !== true
+        // exclude files with the tag "explorerexclude"
+        return node.data?.tags?.includes("explorerexclude") !== true
       },
-    }),
+    })
   ],
   right: [
     Component.Graph(),
@@ -68,11 +68,11 @@ export const defaultListPageLayout: PageLayout = {
       ],
     }),
     Component.Explorer({
-      title: "Explorer",
       filterFn: (node) => {
-        return node.data?.explorerexclude !== true
+        // exclude files with the tag "explorerexclude"
+        return node.data?.tags?.includes("explorerexclude") !== true
       },
-    }),
+    })
   ],
   right: [],
 }
