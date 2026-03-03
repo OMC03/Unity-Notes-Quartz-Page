@@ -2,7 +2,8 @@
 tags:
   - indevelopment
 ---
-**Disclaimer: Before starting with these set of notes it is assumed that you have a basic knowledge of the Unity Engine/C# scripting and a basic understanding of Object Oriented Programming.**
+> [!warning]+ Disclaimer > Before Starting Dialogue System
+>**Disclaimer: Before starting with these set of notes it is assumed that you have a basic knowledge of the Unity Engine/C# scripting and a basic understanding of Object Oriented Programming.**
 ## Dialogue Script
 
 When doing Object Oriented Programming in Unity there are to main components used in its implementation. The `Instruction(Logic)` and the `Information(Data)`. The instructions are used to tell the scripts and unity engine to behave/act. While the information i used as a foundation for the instructions supplying the needed data to carry out the requested tasks.
