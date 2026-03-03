@@ -108,11 +108,20 @@ Here is the vie in the inspector
 ##### Dialogue Choice Data
 
 We have now completed all the data required for the main dialogue system. Next up is the data for the choices system, starting off we need a list in our `Dialogue` class that ill reference the new class below it.
+
 ```
 public List<ChoiceData> choices; // This creates a list in your Inspector
 ```
 
 Next we need to create a new class called `ChoiceData`. Remember to also add `[System.Serializable]`. 
+
+The reason for creating a new class is partially for organization. However, if we leave all the features in one class we would be stuck with a linear time line and be un able to create branching storylines. By creating a separate class and creating a list of it in the original we are able to continuously add to it as well as deciding which dialogue options need a choice.
+
+|**If you kept it in one class...**|**By using a second class (ChoiceData)...**|
+|---|---|
+|You'd be limited to 1 choice per line.|You can have 0, 1, 2, or 20 choices.|
+|The Inspector would be a messy list of "Choice1", "Choice2", etc.|The Inspector is an organized, expandable List.|
+|Harder to add choice-specific features later.|Easy to add "Choice Costs" or "Choice Sounds" later.|
 
 Next we need to have a variable that will determine what the button says and a trigger to play the next dialogue trigger once a specific choice is selected.
 
