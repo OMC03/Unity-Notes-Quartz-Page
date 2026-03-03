@@ -142,7 +142,9 @@ Once these are in place and saved it should look like this in the inspector.
 
 ## Dialogue Trigger Script
 
-Input Text Here
+Now that we have the data of our dialogue system we need a way to bridge the gap between the Unity Inspector. This is also how we will pass said data to the manager allowing us to construct and manipulate the dialogue system throughout the game.
+
+To start we need to create a new script called `DialogueTrigger` it is also important to have this class extend `MonoBehaior` so as it can be attached to a game object.
 
 ## Dialogue Choice Script
 
