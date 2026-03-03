@@ -28,6 +28,7 @@ public class Dialogue
 | **Purpose** | Access from other scripts. | Visibility/Saving in the Inspector.  |
 | **Scope**   | One single variable.       | An entire blueprint/template.        |
 | **Analogy** | A "Public" sign on a door. | A manual on how to rebuild the room. |
+
 Now that the class has been created and is serializable we can start simple by adding a public string variable that will hold the speakers name
 
 ```
