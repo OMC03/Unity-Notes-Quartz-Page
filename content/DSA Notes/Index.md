@@ -1,12 +1,10 @@
 ---
 longform:
   format: scenes
-  title: 2D Platformer Notes
+  title: DSA Notes
   workflow: Default Workflow
   sceneFolder: /
-  scenes:
-    - 2D Unity Game Project Notes
-  sceneTemplate: templates/chapter.md
+  scenes: []
   ignoredFiles: []
 tags:
   - explorerexclude
