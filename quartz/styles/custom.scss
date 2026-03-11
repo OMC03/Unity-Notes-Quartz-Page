@@ -1,8 +1,11 @@
-@use "./base.scss";
-
 // quartz/styles/custom.scss
-embed[type="application/pdf"] {
-  width: 100%;
-  height: 800vh; // Sets height to 85% of the screen height
-  border-radius: 8px;
+
+// This targets the specific PDF embed container used by Quartz
+.pdf-container, 
+embed[type="application/pdf"], 
+iframe[src*=".pdf"] {
+  width: 100% !important;
+  height: 1100px !important; // Forces the height to be much taller
+  min-height: 80vh !important; // Ensures it takes up most of the screen
+  border: none;
 }
