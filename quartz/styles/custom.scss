@@ -1,27 +1,36 @@
 @use "./base.scss";
-// quartz/styles/custom.scss
 
-// Targets the actual content within the PDF viewer if possible
-embed[type="application/pdf"] {
-  object-position: top; // Moves the PDF to the very top of the container
-  zoom: 1.1; // Slightly scales up the document to fill the width
-}
-
-// 1. Target the PDF embed container
+// 1. Desktop & General Settings
 .pdf-container, 
 embed[type="application/pdf"], 
 iframe[src*=".pdf"] {
   width: 100% !important;
-  height: 1100px !important;
+  height: 1100px !important; // Desktop height
   min-height: 80vh !important;
   border: none;
+  object-position: top;
+  zoom: 1.1; 
 }
 
-// 2. Hide title on specific pages (only if you added the cssclass to your note)
+// 2. Mobile Specific Fix (The "Swipe" Fix)
+@media (max-width: 768px) {
+  .pdf-container, 
+  embed[type="application/pdf"], 
+  iframe[src*=".pdf"] {
+    height: 500px !important; // Shorter height for mobile screens
+    zoom: 1.0 !important;   // Reset zoom so it doesn't overflow
+    overflow-x: hidden;     // Prevent the horizontal swipe
+  }
+}
+
+// 3. Layout Tweaks for Resume Page
 .resume-page {
-  // Stretch the center content to take up the full screen width
   .center {
-    grid-column: 1 / -1; // Spans across the entire layout grid
+    grid-column: 1 / -1; 
     max-width: 100%;
+  }
+  // Optional: Hide sidebar on mobile to save space
+  .left, .sidebar {
+    display: none;
   }
 }
