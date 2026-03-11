@@ -19,8 +19,7 @@ iframe[src*=".pdf"] {
 
 // 2. Hide title on specific pages (only if you added the cssclass to your note)
 .resume-page {
-  // Hide the left sidebar
-  .left {
+  .article-title, .content-meta {
     display: none;
   }
   
