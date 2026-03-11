@@ -19,7 +19,7 @@ iframe[src*=".pdf"] {
 
 // 2. Hide title on specific pages (only if you added the cssclass to your note)
 .resume-page {
-  .article-title, .content-meta {
+  .article-title {
     display: none;
   }
   
