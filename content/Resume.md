@@ -1,6 +1,5 @@
 ---
-title: '" "'
 cssclasses:
   - resume-page
 ---
-![[internship-resume.pdf]]
+![[internship-resume.png]]
