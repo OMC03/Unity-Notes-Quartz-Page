@@ -1,36 +1,39 @@
 @use "./base.scss";
 
-// 1. Desktop & General Settings
+// 1. Target the PDF embed container
 .pdf-container, 
 embed[type="application/pdf"], 
 iframe[src*=".pdf"] {
   width: 100% !important;
-  height: 1100px !important; // Desktop height
-  min-height: 80vh !important;
   border: none;
-  object-position: top;
-  zoom: 1.1; 
-}
+  
+  // Desktop settings
+  height: 1100px !important;
+  min-height: 80vh !important;
 
-// 2. Mobile Specific Fix (The "Swipe" Fix)
-@media (max-width: 768px) {
-  .pdf-container, 
-  embed[type="application/pdf"], 
-  iframe[src*=".pdf"] {
-    height: 500px !important; // Shorter height for mobile screens
-    zoom: 1.0 !important;   // Reset zoom so it doesn't overflow
-    overflow-x: hidden;     // Prevent the horizontal swipe
+  // 📱 Mobile-specific adjustments
+  @media (max-width: 768px) {
+    height: 600px !important; // Shorter height for phones
+    min-height: 50vh !important;
+    zoom: 1.0 !important; // Reset zoom so it doesn't overflow
+    object-fit: contain; // Ensures the PDF stays within the edges
   }
 }
 
-// 3. Layout Tweaks for Resume Page
+// 2. Hide title and Expand for Resume Page
 .resume-page {
+  .article-title, .content-meta {
+    display: none;
+  }
+
   .center {
     grid-column: 1 / -1; 
     max-width: 100%;
+    padding: 0; // Removes side padding on mobile to give more room
   }
-  // Optional: Hide sidebar on mobile to save space
-  .left, .sidebar {
+
+  // Hide the sidebars on mobile for more room
+  .left, .right {
     display: none;
   }
 }
