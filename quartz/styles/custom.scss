@@ -18,15 +18,10 @@ iframe[src*=".pdf"] {
 }
 
 // 2. Hide title on specific pages (only if you added the cssclass to your note)
-// .resume-page {
-//   // Hide the left sidebar
-//   .left {
-//     display: none;
-//   }
-  
-//   // Stretch the center content to take up the full screen width
-//   .center {
-//     grid-column: 1 / -1; // Spans across the entire layout grid
-//     max-width: 100%;
-//   }
-// }
+.resume-page {
+  // Stretch the center content to take up the full screen width
+  .center {
+    grid-column: 1 / -1; // Spans across the entire layout grid
+    max-width: 100%;
+  }
+}
