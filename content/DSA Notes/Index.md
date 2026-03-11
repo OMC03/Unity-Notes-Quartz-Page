@@ -5,7 +5,9 @@ longform:
   workflow: Default Workflow
   sceneFolder: /
   scenes: []
-  ignoredFiles: []
+  sceneTemplate: templates/chapter.md
+  ignoredFiles:
+    - C++ Stack Notes
 tags:
   - explorerexclude
 ---
