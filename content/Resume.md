@@ -1,4 +1,5 @@
 ![[internship-resume.png]]
 
 > [!info]+ GitHub Link >
->[Omar's GitHub Page]([OMC03](https://github.com/OMC03))
+> [Omar's GitHub Page](https://github.com/OMC03))
+
