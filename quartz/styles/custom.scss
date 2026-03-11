@@ -1,39 +1,37 @@
 @use "./base.scss";
 
-// 1. Target the PDF embed container
+// quartz/styles/custom.scss
+
+// 1. Target the PDF and its container
 .pdf-container, 
 embed[type="application/pdf"], 
 iframe[src*=".pdf"] {
+  display: block;
+  margin: 0 auto;
   width: 100% !important;
+  max-width: 100vw; // Ensures it never exceeds the viewport width
   border: none;
   
-  // Desktop settings
+  // Desktop height
   height: 1100px !important;
-  min-height: 80vh !important;
 
-  // 📱 Mobile-specific adjustments
+  // 📱 Mobile Fix for the cutoff issue
   @media (max-width: 768px) {
-    height: 600px !important; // Shorter height for phones
-    min-height: 50vh !important;
-    zoom: 1.0 !important; // Reset zoom so it doesn't overflow
-    object-fit: contain; // Ensures the PDF stays within the edges
+    height: 80vh !important; // Uses vertical height instead of fixed pixels
+    width: 100% !important;
+    zoom: 0.8; // Forces a slight zoom out on small screens
+    -moz-transform: scale(0.8); // Firefox specific scaling
+    -webkit-transform: scale(0.8); // Chrome/Safari scaling
+    transform-origin: top left;
   }
 }
 
-// 2. Hide title and Expand for Resume Page
+// 2. Full-width page settings
 .resume-page {
-  .article-title, .content-meta {
-    display: none;
-  }
-
   .center {
-    grid-column: 1 / -1; 
-    max-width: 100%;
-    padding: 0; // Removes side padding on mobile to give more room
-  }
-
-  // Hide the sidebars on mobile for more room
-  .left, .right {
-    display: none;
+    grid-column: 1 / -1;
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 10px; // Minimal padding so text isn't touching the glass
   }
 }
