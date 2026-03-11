@@ -1,5 +1,5 @@
 ---
-title: '" "'
+title:
 ---
 
 ![[internship-resume.pdf]]
