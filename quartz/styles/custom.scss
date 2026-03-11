@@ -9,3 +9,9 @@ iframe[src*=".pdf"] {
   min-height: 80vh !important; // Ensures it takes up most of the screen
   border: none;
 }
+
+.resume-page {
+  .article-title, .content-meta {
+    display: none;
+  }
+}
