@@ -5,9 +5,8 @@ longform:
   workflow: Default Workflow
   sceneFolder: /
   scenes:
-    - Coursera Unity Notes
-    - Index
     - Snowball Fight Notes
+    - Introduction
   sceneTemplate: templates/chapter.md
   ignoredFiles:
     - 
