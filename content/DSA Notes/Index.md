@@ -1,15 +1,13 @@
 ---
 longform:
   format: scenes
-  title: Unity Notes
+  title: DSA Notes
   workflow: Default Workflow
   sceneFolder: /
-  scenes:
-    - Snowball Fight Notes
+  scenes: []
   sceneTemplate: templates/chapter.md
   ignoredFiles:
-    - 
-    - 
+    - C++ Stack Notes
 tags:
   - explorerexclude
 ---
