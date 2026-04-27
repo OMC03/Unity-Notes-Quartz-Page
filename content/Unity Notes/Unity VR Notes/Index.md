@@ -9,5 +9,7 @@ longform:
     - Notes
   ignoredFiles: []
 title: Unity VR Notes & Resources
+tags:
+  - explorerexclude
 ---
-I removed exploreexclude to see if it will change the title in the hierarchy :)
+Potential Home Page for VR notes
