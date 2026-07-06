@@ -10,4 +10,4 @@ longform:
   ignoredFiles: []
 title: Unity VR Notes & Resources
 ---
-I removed exploreexclude to see if it will change the title in the hierarchy :)
+I removed explorexclude to see if it will change the title in the hierarchy :)
