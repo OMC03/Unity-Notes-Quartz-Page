@@ -148,7 +148,7 @@ To start we need to create a new script called `DialogueTrigger` it is also impo
 
 ## Dialogue Choice Script
 
-Input Text Here
+Input Text Here (TEST)
 
 ## Sprite Display Script
 
