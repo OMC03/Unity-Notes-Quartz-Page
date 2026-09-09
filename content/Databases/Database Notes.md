@@ -347,7 +347,9 @@ The algorithm takes a bloated relation scheme $R$ and splits it into two smaller
 - **Original Relation Scheme ($R$):**    $$R = \{\text{department, chair, building, room, course\_number, name, units}\}$$
 - **The Problematic FD ($W \rightarrow Z$):**$$\{\text{department}\} \rightarrow \{\text{chair, building, room}\}$$
     - $W = \{\text{department}\}$ (the minimal determinant causing redundancy).
+	    - This can also be known as the minimal sub key
     - $Z = \{\text{chair, building, room}\}$ (the non-key attributes being repeated).
+	    - This can also be known as the dependencies of the minimal sub key
 
 To isolate the redundancy, we construct two separate relations:
 1. **Creating $R_1 = W \cup Z$ (The Lookup / Parent Table):**
