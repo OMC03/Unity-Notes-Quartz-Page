@@ -501,26 +501,26 @@ classDiagram
     direction LR
 
     class Customer {
-        +name
-        +libraryCardNumber
+        -name
+        -libraryCardNumber
     }
 
     class Loan {
-        +loanDate
-        +dueDate
-        +returnDate
+        -loanDate
+        -dueDate
+        -returnDate
     }
 
     class BookOnShelf {
-        +copyNumber
-        +condition
+        -copyNumber
+        -condition
     }
 
     class CatalogEntry {
-        +title
-        +author
-        +isbn
-        +callNumber
+        -title
+        -author
+        -isbn
+        -callNumber
     }
 
     Customer "1" --> "0..*" Loan : makes
