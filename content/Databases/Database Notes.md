@@ -357,7 +357,10 @@ To isolate the redundancy, we construct two separate relations:
         
 2. **Creating $R_2 = R - Z$ (The Child Table):**
     
-    - Remove $Z$ from the original attributes $R$:$$R_2 = \{\text{department, chair, building, room, course\_number, name, units}\} - \{\text{chair, building, room}\}$$$$R_2 = \{\text{department, course\_number, name, units}\}$$
+    - Remove $Z$ from the original attributes $R$:
+    - $R_2$ = {department, chair, building, room, course_number, name, units}\} - {chair, building, room}
+    - $R_2$ = {department, course_number, name, units}
+
     - **Why?** We subtract $Z$ to stop repeating chair, building, and room inside every course record. Notice $W$ ($\{\text{department}\}$) remains in $R_2$ so it can act as a **Foreign Key** to link back to $R_1$.
 
 The algorithm loops recursively: after creating $R_1$ and $R_2$, you must test both new tables to ensure neither contains any hidden subkey redundancies.
