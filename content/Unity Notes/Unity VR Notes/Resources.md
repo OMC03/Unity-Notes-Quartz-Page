@@ -8,5 +8,6 @@ Here are the assets used in the video above
 [OMC03/VRTutorialXRInteractionToolkit3x](https://github.com/OMC03/VRTutorialXRInteractionToolkit3x)
 
 Desktop app required for Meta Horizon Linking
+**NOTE: This only works on windows NOT Linux or Mac**
 [Getting started with Meta Horizon Link App | Meta Help Center](https://www.meta.com/help/quest/1517439565442928/)
 

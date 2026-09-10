@@ -1,11 +1,11 @@
 ---
 longform:
   format: scenes
-  title: 2D Unity Game Project Notes
+  title: Databases
   workflow: Default Workflow
   sceneFolder: /
   scenes:
-    - 2D Unity Game Project Notes
+    - Database Notes
   sceneTemplate: templates/chapter.md
   ignoredFiles: []
 tags:
