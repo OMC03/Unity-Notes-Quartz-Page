@@ -17,5 +17,3 @@ If using a cable turn off "Use Air-Link (WIFI)". There should then be an option 
 
 After connecting to the PC you should be able to control it from the headset. This will confirm that Link Play is properly setup.
 
-# Github Setup
-
