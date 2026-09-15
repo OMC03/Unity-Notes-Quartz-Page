@@ -1,7 +1,6 @@
 ---
 "title:": Database Notes
 tags:
-  - indevelopment
 ---
 # Classes
 
