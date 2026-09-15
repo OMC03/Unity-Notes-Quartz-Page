@@ -6,7 +6,6 @@ longform:
   sceneFolder: /
   scenes:
     - Resolution Manager Notes
-    - WebGL Video Setup
   sceneTemplate: templates/chapter.md
   ignoredFiles: []
 tags:
