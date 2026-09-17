@@ -13,7 +13,7 @@ Welcome to my page! Here is my portfolio on projects I have completed and am cur
       data-tags="Unity, VR, Design"
       data-link="/Unity-Notes/Unity-VR-Notes/Resources"
       data-description="A room-scale VR experience letting users physically walk around a virtual space to view and interact with presentation slides, using a hybrid locomotion system combining real-world tracking with joystick movement.">
-    <!-- once you have footage, add: data-media="attachments/vr-slide-viewer.mp4" data-media-type="video" -->
+    data-media="attachments/Hand-Fist-Sword.png" data-media-type="image"
   </li>
 
   <li class="project-card"
