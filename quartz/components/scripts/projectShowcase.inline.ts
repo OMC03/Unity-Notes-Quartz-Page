@@ -2,6 +2,24 @@
 // Quartz client scripts run in the browser, outside the normal TS build
 // context, and must handle Quartz's SPA navigation (the "nav" event fires
 // after every page transition, including the first load).
+//
+// IMPORTANT: data-link and data-media values in the markup are root-relative
+// slugs with NO leading slash (e.g. "Unity-Notes/Unity-VR-Notes/Index",
+// "attachments/foo.mp4") — never "/Unity-Notes/...". They're resolved against
+// the current page's depth at runtime via resolveRelative, exactly like
+// Quartz resolves its own internal links. This is what makes the showcase
+// work whether the site is hosted at a domain root or under a GitHub Pages
+// project subpath like /Unity-Notes-Quartz-Page/.
+
+import { getFullSlug, resolveRelative } from "../../util/path"
+
+function resolveSitePath(path: string): string {
+  if (!path) return ""
+  // Leave absolute URLs (http://, https://, mailto:, etc.) untouched
+  if (/^[a-z]+:/i.test(path) || path.startsWith("//")) return path
+  const clean = path.replace(/^\/+/, "")
+  return resolveRelative(getFullSlug(window), clean as any)
+}
 
 function setupProjectShowcase() {
   const grids = Array.from(document.querySelectorAll(".project-grid"))
@@ -38,7 +56,6 @@ function setupProjectShowcase() {
 
   function closeLightbox() {
     lightbox.classList.remove("is-open")
-    // stop any playing video when closing
     const video = lightboxMedia.querySelector("video")
     if (video) video.pause()
     lightboxMedia.innerHTML = ""
@@ -51,29 +68,25 @@ function setupProjectShowcase() {
       .split(",")
       .map((t) => t.trim())
       .filter(Boolean)
-    const link = card.dataset.link ?? ""
+    const notesLink = card.dataset.link ?? ""
+    const githubLink = card.dataset.github ?? ""
 
     lightboxTitle.textContent = title
     lightboxDescription.textContent = description
     lightboxTags.innerHTML = tags.map((t) => `<span>${t}</span>`).join("")
-    lightboxLinks.innerHTML = link
-      ? `<a href="${link}">View project notes &rarr;</a>`
-      : ""
+
+    const linkParts: string[] = []
+    if (notesLink) {
+      linkParts.push(`<a href="${resolveSitePath(notesLink)}">View project notes &rarr;</a>`)
+    }
+    if (githubLink) {
+      linkParts.push(`<a href="${githubLink}" target="_blank" rel="noopener">View on GitHub &rarr;</a>`)
+    }
+    lightboxLinks.innerHTML = linkParts.join("")
 
     lightboxMedia.innerHTML = ""
-    const sourceMedia = card.querySelector("video, img")
-    if (sourceMedia) {
-      const clone = sourceMedia.cloneNode(true) as HTMLElement
-      clone.removeAttribute("class")
-      if (clone.tagName === "VIDEO") {
-        const v = clone as HTMLVideoElement
-        v.controls = true
-        v.autoplay = true
-        v.loop = true
-        v.muted = false
-      }
-      lightboxMedia.appendChild(clone)
-    }
+    const mediaEl = buildMediaElement(card, true)
+    if (mediaEl) lightboxMedia.appendChild(mediaEl)
 
     lightbox.classList.add("is-open")
   }
@@ -93,18 +106,56 @@ function setupProjectShowcase() {
   document.addEventListener("keydown", onKeydown)
   cleanups.push(() => document.removeEventListener("keydown", onKeydown))
 
+  // --- Media element construction -----------------------------------------
+  // Builds (or reuses, for the small hover-preview version) a <video>/<img>
+  // from a card's data-media / data-media-type, with a correctly-resolved
+  // root-relative src. `large` controls whether it's the lightbox variant.
+  function buildMediaElement(card: HTMLElement, large: boolean): HTMLElement | null {
+    const src = card.dataset.media
+    if (!src) return null
+    const type = card.dataset.mediaType === "image" ? "image" : "video"
+    const resolvedSrc = resolveSitePath(src)
+
+    if (type === "image") {
+      const img = document.createElement("img")
+      img.src = resolvedSrc
+      img.alt = card.dataset.title ?? ""
+      if (!large) img.className = "project-card-media"
+      return img
+    }
+
+    const video = document.createElement("video")
+    video.src = resolvedSrc
+    video.muted = !large
+    video.loop = true
+    video.playsInline = true
+    video.preload = "metadata"
+    if (large) {
+      video.controls = true
+      video.autoplay = true
+    } else {
+      video.className = "project-card-media"
+    }
+    return video
+  }
+
   // --- Per-grid setup: cards, hover preview, placeholders, filters --------
   for (const grid of grids) {
     const cards = Array.from(grid.querySelectorAll(".project-card")) as HTMLElement[]
     const allTags = new Set<string>()
 
     for (const card of cards) {
-      // Auto-generate a placeholder for projects without media yet
-      if (!card.querySelector("video, img, .project-card-placeholder")) {
-        const placeholder = document.createElement("div")
-        placeholder.className = "project-card-placeholder"
-        placeholder.textContent = card.dataset.title ?? "Coming soon"
-        card.prepend(placeholder)
+      // Populate media (or a placeholder if none was provided)
+      if (!card.querySelector(".project-card-media, .project-card-placeholder")) {
+        const media = buildMediaElement(card, false)
+        if (media) {
+          card.prepend(media)
+        } else {
+          const placeholder = document.createElement("div")
+          placeholder.className = "project-card-placeholder"
+          placeholder.textContent = card.dataset.title ?? "Coming soon"
+          card.prepend(placeholder)
+        }
       }
 
       // Hover / in-view video preview
