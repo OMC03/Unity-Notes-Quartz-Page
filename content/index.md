@@ -17,19 +17,28 @@ Welcome to my page! Here is my portfolio on projects I have completed and am cur
   </li>
 
   <li class="project-card"
-      data-title="Trick-Question Quiz Game"
-      data-tags="Unity, Design, C#"
-      data-description="A comedic trick-question quiz game inspired by The Impossible Quiz, designed and built for a school club Game Jam in Unity.">
-    <!-- data-media="attachments/impossible-quiz.png" data-media-type="image" -->
-  </li>
-
-  <li class="project-card"
       data-title="2D Platformer"
       data-github="https://github.com/OMC03/2D_Platformer_Game"
       data-tags="Unity, C#, Level Design"
       data-link="Unity-Notes/2D-Platformer-Notes/Index"
-      data-description="A 2D side-scrolling platformer with progressively challenging level design, custom enemy AI, and interactive collectibles.">
-    <!-- data-media="attachments/2d-platformer.mp4" data-media-type="video" -->
+      data-description="A 2D side-scrolling platformer with progressively challenging level design, custom enemy AI, and interactive collectibles."
+    data-media="attachments/2D_Platformer_Game_lvl4.gif" data-media-type="image">
+  </li>
+
+  <li class="project-card"
+      data-title="AI Navigation & Pathfinding (RollaBall)"
+      data-github="https://github.com/OMC03/Rollaball-Game"
+      data-tags="Unity, C#, AI"
+      data-description="An autonomous navigation system using Unity's NavMesh library, with dynamic obstacle avoidance and idle/pursuit/evasion state behaviors."
+    data-media="attachments/RolllaBall-Gameplay.gif" data-media-type="image">
+  </li>
+
+  <li class="project-card"
+      data-title="Gingerbread Clicker"
+      data-github="https://github.com/OMC03/Gingerbread_Clicker_Game"
+      data-tags="Unity, C#"
+      data-description="A Tycoon style clicker game based off of Cookie Clicker using Unity's UI Canvases to design a dynamic expanding UX/UI system to fit most resolutions"
+    data-media="attachments/Clicker_Game.png" data-media-type="image">
   </li>
 
   <li class="project-card"
@@ -37,16 +46,15 @@ Welcome to my page! Here is my portfolio on projects I have completed and am cur
       data-github="https://github.com/OMC03/SnowBall_Fight_Game"
       data-tags="Unity, C#, Multiplayer"
       data-link="Unity-Notes/Snowball-Fight-Notes"
-      data-description="A local two-player arena game with shared-keyboard input, event-driven projectile mechanics, and a round-based scoring loop.">
-    <!-- no media yet — a placeholder is generated automatically -->
+      data-description="A local two-player arena game with shared-keyboard input, event-driven projectile mechanics, and a round-based scoring loop."
+    data-media="attachments/snowball_fight.png" data-media-type="image">
   </li>
 
   <li class="project-card"
-      data-title="AI Navigation & Pathfinding (RollaBall)"
-      data-github="https://github.com/OMC03/Rollaball-Game"
-      data-tags="Unity, C#, AI"
-      data-description="An autonomous navigation system using Unity's NavMesh library, with dynamic obstacle avoidance and idle/pursuit/evasion state behaviors.">
-    <!-- data-media="attachments/rollaball.mp4" data-media-type="video" -->
+      data-title="Trick-Question Quiz Game"
+      data-tags="Unity, Design, C#"
+      data-description="A comedic trick-question quiz game inspired by The Impossible Quiz, designed and built for a school club Game Jam in Unity."
+    data-media="attachments/Trick-Question-Quiz.png" data-media-type="image">
   </li>
 
   <li class="project-card"
