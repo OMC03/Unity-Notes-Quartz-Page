@@ -5,7 +5,7 @@ longform:
   workflow: Default Workflow
   sceneFolder: /
   scenes:
-    - Database General Notes
+    - Database Notes
   sceneTemplate: templates/chapter.md
   ignoredFiles: []
 tags:
