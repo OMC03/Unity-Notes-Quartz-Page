@@ -12,14 +12,14 @@ Welcome to my page! Here is my portfolio on projects I have completed and am cur
       data-github="https://github.com/OMC03/Unity-VR-Simulation"
       data-tags="Unity, VR, Design"
       data-link="/Unity-Notes/Unity-VR-Notes/Resources"
-      data-description="A room-scale VR experience letting users physically walk around a virtual space to view and interact with presentation slides, using a hybrid locomotion system combining real-world tracking with joystick movement.">
-    data-media="attachments/Hand-Fist-Sword.png" data-media-type="image"
+      data-description="A room-scale VR experience letting users physically walk around a virtual space to view and interact with presentation slides, using a hybrid locomotion system combining real-world tracking with joystick movement."
+    data-media="attachments/Hand-Fist-Sword.png" data-media-type="image">
   </li>
 
   <li class="project-card"
       data-title="Trick-Question Quiz Game"
       data-tags="Unity, Design, C#"
-      data-description="A comedic trick-question quiz game inspired by The Impossible Quiz, designed and built solo end-to-end in Unity.">
+      data-description="A comedic trick-question quiz game inspired by The Impossible Quiz, designed and built for a school club Game Jam in Unity.">
     <!-- data-media="attachments/impossible-quiz.png" data-media-type="image" -->
   </li>
 
