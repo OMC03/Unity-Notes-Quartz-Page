@@ -20,7 +20,7 @@ Welcome to my page! Here is my portfolio on projects I have completed and am cur
       data-title="2D Platformer"
       data-github="https://github.com/OMC03/2D_Platformer_Game"
       data-tags="Unity, C#, Level Design"
-      data-link="Unity-Notes/2D-Platformer-Notes/Index"
+      data-link="Unity-Notes/2D-Platformer-Notes/2D-Unity-Game-Project-Notes"
       data-description="A 2D side-scrolling platformer with progressively challenging level design, custom enemy AI, and interactive collectibles."
     data-media="attachments/2D_Platformer_Game_lvl4.gif" data-media-type="image">
   </li>
