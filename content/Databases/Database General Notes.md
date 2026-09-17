@@ -1,6 +1,6 @@
 ---
-"title:": Database Notes
 tags:
+  - DatabaseNotes
 ---
 # Classes
 

@@ -1,3 +1,7 @@
+---
+tags:
+  - DatabaseNotes
+---
 ## Inheritance
 
 When creating classes for a diagram you might notice that some of the attributes don't relate to the entire class but rather are used to determine certain attributes about said class. In this case you would need to create a sub class. The process of checking for sub classes from top to bottom is known as specialization.

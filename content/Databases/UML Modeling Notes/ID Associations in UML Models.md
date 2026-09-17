@@ -1,3 +1,7 @@
+---
+tags:
+  - DatabaseNotes
+---
 ## Basic Structures: Object Relationships
 
 UML model associations generally follow 4 main groupings:

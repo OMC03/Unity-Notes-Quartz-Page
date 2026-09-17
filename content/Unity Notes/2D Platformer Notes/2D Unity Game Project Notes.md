@@ -1,3 +1,7 @@
+---
+tags:
+  - UnityNotes
+---
 ## Getting Started
 
 **Here is a tutorial to get started with setting up Unity and learning the interface, along with my git hub repository on this project and an export if you would like to play it for yourself**

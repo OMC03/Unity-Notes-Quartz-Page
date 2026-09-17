@@ -1,3 +1,7 @@
+---
+tags:
+  - DatabaseNotes
+---
 ## Introduction
 
 - You can set attributes of a UML class to private by denoting a `-` before the denoted attribute name. Examples include:

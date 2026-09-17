@@ -1,6 +1,8 @@
 ---
 "title:": WebGL Video Setup
 tags:
+  - UnityNotes
+  - GeneralGameFeatures
 ---
 This guide covers how to stream MP4 videos in Unity WebGL games hosted on platforms like itch.io without running into CORS errors, build size bloat, or unsupported `VideoClip` asset restrictions.
 

@@ -1,3 +1,7 @@
+---
+tags:
+  - DatabaseNotes
+---
 ## Redundancy & Integrity
 
 Databases need to able to store all of the necessary data a company may need/produce over its running lifespan. This can have some varying complications if the data is not handled correctly. As an example if the database needs to store information regarding the weight of a package but the current database has no column or row to store that specific piece of information, the entire database would need to be restructured to accommodate the new attribute value. Similarly if a database stores unnecessary information this could cause risk/liability, and wastes storage if the data is not handled properly. The best practice to avoid this is to store all data as basic text strings in generic column names such as cloA, cloB, cloC. It is also worth noting to set them to maximum widths to avoid any potential overflows.

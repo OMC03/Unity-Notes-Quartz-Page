@@ -1,3 +1,7 @@
+---
+tags:
+  - DatabaseNotes
+---
 ## Many to Many Associations
 
 So far we have looked at relations such as One to Many One to One and, Many to One can also be considered a relation although it is just he reverse of One to Many. One reason to use Many to Many relations is for when we want many attributes of one class to tie with many attributes of another. For example:

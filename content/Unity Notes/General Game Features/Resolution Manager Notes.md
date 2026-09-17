@@ -1,3 +1,8 @@
+---
+tags:
+  - UnityNotes
+  - GeneralGameFeatures
+---
 ## Resolution Manager
 
 Here are notes on how to make a Resolution Manager in Unity. It is noted that before you start you will need two components within the hierarchy in order to begin. The first one being a Drop Down component and the second one being a Toggle Button. These can be created by right clicking the hierarchy and going to `UI > Toggle` as well as `UI> Drop Down`. 

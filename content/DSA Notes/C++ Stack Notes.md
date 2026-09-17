@@ -1,3 +1,7 @@
+---
+tags:
+  - DataStructureNotes
+---
 
 Stacks in C++ follow the standard template of Last-In First-Out(LIFO)
 
