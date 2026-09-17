@@ -10,7 +10,7 @@ A collection of things I've designed and built, mostly in Unity.
       data-title="VR Slide Viewer"
       data-github="https://github.com/OMC03/Unity-VR-Simulation"
       data-tags="Unity, VR, Design"
-      data-link="/Unity-Notes-Quartz-Page/Unity-Notes/Unity-VR-Notes/Resources"
+      data-link="/Unity-Notes/Unity-VR-Notes/Resources"
       data-description="A room-scale VR experience letting users physically walk around a virtual space to view and interact with presentation slides, using a hybrid locomotion system combining real-world tracking with joystick movement.">
     <!-- once you have footage, add: data-media="attachments/vr-slide-viewer.mp4" data-media-type="video" -->
   </li>
