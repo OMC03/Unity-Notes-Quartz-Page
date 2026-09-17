@@ -1,0 +1,227 @@
+// Project showcase grid + card + lightbox styles.
+// Uses Quartz's theme CSS variables (--dark, --darkgray, --gray, --lightgray,
+// --light, --secondary, --tertiary, --highlight) so it automatically follows
+// light/dark mode and the user's configured color palette.
+
+.project-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+
+  button.project-filter-chip {
+    font-family: var(--bodyFont);
+    font-size: 0.85rem;
+    padding: 0.35rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid var(--lightgray);
+    background: transparent;
+    color: var(--darkgray);
+    cursor: pointer;
+    transition: all 0.15s ease;
+
+    &:hover {
+      border-color: var(--secondary);
+      color: var(--secondary);
+    }
+
+    &.active {
+      background: var(--secondary);
+      border-color: var(--secondary);
+      color: var(--light);
+    }
+  }
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.25rem;
+  margin: 1rem 0 2rem 0;
+  list-style: none;
+  padding: 0;
+}
+
+.project-card {
+  position: relative;
+  display: block;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--lightgray);
+  aspect-ratio: 16 / 10;
+  cursor: pointer;
+  border: 1px solid var(--lightgray);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+
+  &:hover,
+  &:focus-visible {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  }
+
+  &.is-filtered-out {
+    display: none;
+  }
+
+  .project-card-media {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: var(--lightgray);
+  }
+
+  .project-card-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    text-align: center;
+    background: linear-gradient(135deg, var(--secondary), var(--tertiary));
+    color: var(--light);
+    font-family: var(--headerFont);
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  .project-card-overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.9rem 1rem 0.7rem 1rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0));
+    color: #fff;
+    pointer-events: none;
+
+    .project-card-title {
+      font-family: var(--headerFont);
+      font-size: 1rem;
+      font-weight: 700;
+      margin: 0 0 0.25rem 0;
+    }
+
+    .project-card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+
+      span {
+        font-size: 0.7rem;
+        padding: 0.1rem 0.5rem;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.18);
+      }
+    }
+  }
+}
+
+// Lightbox
+.project-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.75);
+
+  &.is-open {
+    display: flex;
+  }
+
+  .project-lightbox-inner {
+    position: relative;
+    width: min(920px, 100%);
+    max-height: 90vh;
+    background: var(--light);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  }
+
+  .project-lightbox-media {
+    width: 100%;
+    max-height: 55vh;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    video,
+    img {
+      width: 100%;
+      max-height: 55vh;
+      object-fit: contain;
+    }
+  }
+
+  .project-lightbox-body {
+    padding: 1.25rem 1.5rem 1.5rem 1.5rem;
+    overflow-y: auto;
+
+    h3 {
+      margin: 0 0 0.5rem 0;
+      font-family: var(--headerFont);
+    }
+
+    p {
+      margin: 0 0 0.75rem 0;
+      color: var(--darkgray);
+      line-height: 1.5;
+    }
+
+    .project-lightbox-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 0.75rem;
+
+      span {
+        font-size: 0.75rem;
+        padding: 0.15rem 0.6rem;
+        border-radius: 999px;
+        background: var(--highlight);
+        color: var(--secondary);
+      }
+    }
+
+    .project-lightbox-links a {
+      margin-right: 1rem;
+      font-weight: 600;
+      color: var(--secondary);
+    }
+  }
+
+  .project-lightbox-close {
+    position: absolute;
+    top: 0.6rem;
+    right: 0.8rem;
+    z-index: 2;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0, 0, 0, 0.55);
+    color: #fff;
+    font-size: 1.1rem;
+    line-height: 1;
+    cursor: pointer;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}
