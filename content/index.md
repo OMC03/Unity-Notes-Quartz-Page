@@ -59,6 +59,7 @@ Welcome to my page! Here is my portfolio on projects I have completed and am cur
 
   <li class="project-card"
       data-title="Last Stand: Downed-State System"
+      data-modpage-link="https://www.curseforge.com/minecraft/mc-mods/boundary-boxes"
       data-tags="Java, Networking, Multiplayer"
       data-description="A multiplayer 'downed but not out' mechanic for Minecraft — cover, revive, carry/throw, and self-revive — built with a custom Forge client-server networking layer.">
     <!-- data-media="attachments/last-stand.png" data-media-type="image" -->

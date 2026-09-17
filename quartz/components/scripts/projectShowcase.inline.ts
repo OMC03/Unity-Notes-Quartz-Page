@@ -70,6 +70,7 @@ function setupProjectShowcase() {
       .filter(Boolean)
     const notesLink = card.dataset.link ?? ""
     const githubLink = card.dataset.github ?? ""
+    const modpageLink = card.dataset.modpageLink ?? ""
 
     lightboxTitle.textContent = title
     lightboxDescription.textContent = description
@@ -81,6 +82,9 @@ function setupProjectShowcase() {
     }
     if (githubLink) {
       linkParts.push(`<a href="${githubLink}" target="_blank" rel="noopener">View on GitHub &rarr;</a>`)
+    }
+    if (modpageLink) {
+      linkParts.push(`<a href="${modpageLink}" target="_blank" rel="noopener">View Mod Page &rarr;</a>`)
     }
     lightboxLinks.innerHTML = linkParts.join("")
 
