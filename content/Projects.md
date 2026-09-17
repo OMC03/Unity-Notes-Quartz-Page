@@ -9,7 +9,7 @@ A collection of things I've designed and built, mostly in Unity.
   <li class="project-card"
       data-title="VR Slide Viewer"
       data-tags="Unity, VR, Design"
-      data-link="/Unity-Notes/Unity-VR-Notes/Resources"
+      data-link="/Unity-Notes-Quartz-Page/Unity-Notes/Unity-VR-Notes/Resources"
       data-description="A room-scale VR experience letting users physically walk around a virtual space to view and interact with presentation slides, using a hybrid locomotion system combining real-world tracking with joystick movement.">
     <!-- swap in real media once you have it, e.g.:
     <video class="project-card-media" src="/attachments/vr-slide-viewer.mp4" muted loop playsinline preload="metadata"></video>
