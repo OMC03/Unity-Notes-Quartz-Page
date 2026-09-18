@@ -36,7 +36,7 @@ Welcome to my page! Here is my portfolio on projects I have completed and am cur
   <li class="project-card"
       data-title="Gingerbread Clicker"
       data-github="https://github.com/OMC03/Gingerbread_Clicker_Game"
-      data-tags="Unity, C#"
+      data-tags="Unity, C#, UI"
       data-description="A Tycoon style clicker game based off of Cookie Clicker using Unity's UI Canvases to design a dynamic expanding UX/UI system to fit most resolutions"
     data-media="attachments/Clicker_Game.png" data-media-type="image">
   </li>
@@ -59,7 +59,7 @@ Welcome to my page! Here is my portfolio on projects I have completed and am cur
 
   <li class="project-card"
       data-title="Last Stand: Downed-State System"
-      data-tags="Java, Networking, Multiplayer"
+      data-tags="Java, Networking, Multiplayer, Modding"
       data-description="A multiplayer 'downed but not out' mechanic for Minecraft — cover, revive, carry/throw, and self-revive — built with a custom Forge client-server networking layer."
       data-media="attachments/downed-system.mp4" data-media-type="video"
       data-poster="attachments/downed-system-poster.png">
