@@ -68,7 +68,7 @@ Drop the actual file in `content/attachments/`, and reference it as
 - Tag names are case-sensitive for matching, so keep spelling/casing
   consistent across cards (e.g. always `"Unity"`, not sometimes `"unity"`).
 
-## Links: notes, GitHub, and mod page
+## Links: Notes, GitHub, and Mod Page
 
 All three are independent — set any combination (none, one, two, or all
 three) and only the ones present show up in the lightbox:
@@ -155,7 +155,7 @@ ever misconfigured (like the forwarding issue above), GitHub can silently
 clear this field as a safety measure — if the site 404s despite DNS looking
 correct, check here first and re-enter/re-save the domain if it's blank.
 
-### The GitHub Actions gotcha (why the domain kept 404ing)
+### The GitHub Actions Error (why the domain kept 404ing)
 
 This repo deploys via a custom GitHub Actions workflow
 (`.github/workflows/deploy.yaml`), not GitHub's legacy "deploy from a
