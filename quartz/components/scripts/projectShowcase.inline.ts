@@ -134,6 +134,9 @@ function setupProjectShowcase() {
     video.loop = true
     video.playsInline = true
     video.preload = "metadata"
+    if (card.dataset.poster) {
+      video.poster = resolveSitePath(card.dataset.poster)
+    }
     if (large) {
       video.controls = true
       video.autoplay = true

@@ -61,7 +61,8 @@ Welcome to my page! Here is my portfolio on projects I have completed and am cur
       data-title="Last Stand: Downed-State System"
       data-tags="Java, Networking, Multiplayer"
       data-description="A multiplayer 'downed but not out' mechanic for Minecraft — cover, revive, carry/throw, and self-revive — built with a custom Forge client-server networking layer."
-      data-media="attachments/downed-system.mp4" data-media-type="video">
+      data-media="attachments/downed-system.mp4" data-media-type="video"
+      data-poster="attachments/downed-system-poster.png">
   </li>
 
 </ul>
