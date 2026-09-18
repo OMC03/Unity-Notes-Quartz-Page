@@ -59,6 +59,21 @@ tag filter bar automatically.
 Drop the actual file in `content/attachments/`, and reference it as
 `attachments/filename.ext` (no leading slash).
 
+## Poster image for videos
+
+For a `.mp4` card, add `data-poster="attachments/thumbnail.jpg"` to show a static image at rest, swapping to the playing video only once the card is hovered (or scrolled into view) — instead of a black/blank frame before playback starts:
+
+```html
+<li class="project-card"
+    data-title="2D Platformer"
+    data-media="attachments/2d-platformer.mp4" data-media-type="video"
+    data-poster="attachments/2d-platformer-poster.jpg"
+    data-description="...">
+</li>
+```
+
+Only applies to videos — `data-poster` is ignored for images/GIFs, since those are already static/animating on their own. Optional either way: no `data-poster` just means the card shows whatever the browser's default first-frame behavior does until you hover.
+
 ## Tags & the filter bar
 
 - `data-tags` is a comma-separated list, e.g. `"Unity, C#, AI"`.
