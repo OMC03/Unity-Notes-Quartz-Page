@@ -2,20 +2,19 @@
 tags:
   - explorerexclude
 ---
-# Project Showcase — Reference Guide
-
 How to add, edit, and extend cards in `content/Projects.md`. Everything lives
 in plain HTML inside that one markdown file — no code changes needed for any
 of the below, unless you're adding a brand-new *type* of link (see the last
 section).
 
-## Anatomy of a card
+## Anatomy of a Card
 
 ```html
 <li class="project-card"
     data-title="Project Name"
     data-tags="Unity, C#, Design"
     data-media="attachments/your-file.mp4" data-media-type="video"
+    data-poster="attachments/your-file-poster.jpg"
     data-link="/Unity-Notes/Some-Folder/Index"
     data-github="https://github.com/OMC03/some-repo"
     data-modpage-link="https://modrinth.com/mod/your-mod"
@@ -29,6 +28,7 @@ optional and the card adapts:
 | Attribute | Optional? | Effect if omitted |
 |---|---|---|
 | `data-media` / `data-media-type` | Yes | Auto-generates a placeholder tile with the title |
+| `data-poster` | Yes (video only) | Browser's default first-frame behavior shows until hover, instead of a chosen thumbnail |
 | `data-tags` | Yes | Card just won't appear under any filter chip |
 | `data-link` | Yes | No "View project notes" link in the lightbox |
 | `data-github` | Yes | No "View on GitHub" link in the lightbox |
@@ -41,14 +41,14 @@ closed early somewhere above it — scroll up and check `data-description`,
 since its long text makes it the easiest place to accidentally leave off the
 trailing `>` in the wrong spot.
 
-## Adding a new panel (project)
+## Adding a New Panel (project)
 
 Copy an existing `<li class="project-card">...</li>` block, paste it inside
 the `<ul class="project-grid">`, and edit the attributes. That's it — no
 layout code, no registration anywhere else. New cards join the grid and the
 tag filter bar automatically.
 
-## Images vs. GIFs vs. videos
+## Images vs. GIFs vs. Videos
 
 | File type | `data-media-type` | Notes |
 |---|---|---|
@@ -59,9 +59,12 @@ tag filter bar automatically.
 Drop the actual file in `content/attachments/`, and reference it as
 `attachments/filename.ext` (no leading slash).
 
-## Poster image for videos
+### Poster Image for Videos
 
-For a `.mp4` card, add `data-poster="attachments/thumbnail.jpg"` to show a static image at rest, swapping to the playing video only once the card is hovered (or scrolled into view) — instead of a black/blank frame before playback starts:
+For a `.mp4` card, add `data-poster="attachments/thumbnail.jpg"` to show a
+static image at rest, swapping to the playing video only once the card is
+hovered (or scrolled into view) — instead of a black/blank frame before
+playback starts:
 
 ```html
 <li class="project-card"
@@ -72,7 +75,24 @@ For a `.mp4` card, add `data-poster="attachments/thumbnail.jpg"` to show a stati
 </li>
 ```
 
-Only applies to videos — `data-poster` is ignored for images/GIFs, since those are already static/animating on their own. Optional either way: no `data-poster` just means the card shows whatever the browser's default first-frame behavior does until you hover.
+Only applies to videos — `data-poster` is ignored for images/GIFs, since
+those are already static/animating on their own.
+
+**How it actually works under the hood:** a card with a poster gets a
+separate overlay image sitting on top of the (paused) video, shown at rest
+and hidden the moment you hover. This is deliberate rather than using the
+browser's native `<video poster>` behavior directly — that attribute only
+displays before a video has played for the first time; once it's played
+once, the browser permanently shows the video's own current frame instead,
+even after pausing and resetting `currentTime` back to `0`. Managing the
+poster ourselves means it reliably reappears every time the mouse leaves,
+no matter how many times the video has already played.
+
+One behavior change this brings: cards **without** a poster still preview
+automatically when scrolled into view (useful on touch devices, which have
+no hover) — but a card **with** a poster only plays on explicit hover/tap,
+since scroll-triggered autoplay would fight the "static poster at rest"
+look you're going for.
 
 ## Tags & the filter bar
 
@@ -83,7 +103,7 @@ Only applies to videos — `data-poster` is ignored for images/GIFs, since those
 - Tag names are case-sensitive for matching, so keep spelling/casing
   consistent across cards (e.g. always `"Unity"`, not sometimes `"unity"`).
 
-## Links: Notes, GitHub, and Mod Page
+## Links: Notes, GitHub, and mod page
 
 All three are independent — set any combination (none, one, two, or all
 three) and only the ones present show up in the lightbox:
@@ -131,13 +151,13 @@ different hover animation), *styling* (e.g. card colors/spacing), or add a
 new link type as described above — adding, editing, or removing projects
 never requires touching them.
 
-## Custom domain setup (DNS + GitHub Pages)
+## Custom Domain Setup (DNS + GitHub Pages)
 
 This site is served from `hunterdevop.com` instead of the default
 `omc03.github.io`. Notes in case anything needs to be touched again later —
 DNS registrar, GitHub repo settings, and deploy workflow all had to agree.
 
-### Required DNS records
+### Required DNS Records
 
 At the registrar (GoDaddy, in this case), the domain needs exactly:
 
@@ -162,7 +182,7 @@ forwarding rule entirely, rather than editing it. The DNS Records tab should
 end up with *only* the five records in the table above (plus whatever NS/SOA
 records the registrar manages itself).
 
-### GitHub repo settings
+### GitHub Repo Settings
 
 In **Settings → Pages**, the "Custom domain" field must contain
 `hunterdevop.com`, and show a green "DNS check successful." If the domain was
