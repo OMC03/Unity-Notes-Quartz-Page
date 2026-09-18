@@ -134,14 +134,18 @@ function setupProjectShowcase() {
     video.loop = true
     video.playsInline = true
     video.preload = "metadata"
-    if (card.dataset.poster) {
-      video.poster = resolveSitePath(card.dataset.poster)
-    }
     if (large) {
       video.controls = true
       video.autoplay = true
+      if (card.dataset.poster) {
+        video.poster = resolveSitePath(card.dataset.poster)
+      }
     } else {
       video.className = "project-card-media"
+      // Poster is handled by a separate overlay <img> for small cards (see
+      // below) rather than the native `poster` attribute, which the browser
+      // only honors before the video has ever played once — it won't
+      // reappear on mouseleave otherwise.
     }
     return video
   }
@@ -157,6 +161,17 @@ function setupProjectShowcase() {
         const media = buildMediaElement(card, false)
         if (media) {
           card.prepend(media)
+
+          // Videos with a poster get a separate overlay <img>, shown at
+          // rest and hidden on hover/play. See note in buildMediaElement
+          // on why we don't rely on the native `poster` attribute here.
+          if (media.tagName === "VIDEO" && card.dataset.poster) {
+            const posterImg = document.createElement("img")
+            posterImg.className = "project-card-poster"
+            posterImg.src = resolveSitePath(card.dataset.poster)
+            posterImg.alt = ""
+            card.prepend(posterImg)
+          }
         } else {
           const placeholder = document.createElement("div")
           placeholder.className = "project-card-placeholder"
@@ -165,13 +180,18 @@ function setupProjectShowcase() {
         }
       }
 
-      // Hover / in-view video preview
+      // Hover video preview
       const video = card.querySelector("video") as HTMLVideoElement | null
+      const posterImg = card.querySelector(".project-card-poster") as HTMLElement | null
       if (video) {
-        const play = () => video.play().catch(() => {})
+        const play = () => {
+          posterImg?.classList.add("is-hidden")
+          video.play().catch(() => {})
+        }
         const pause = () => {
           video.pause()
           video.currentTime = 0
+          posterImg?.classList.remove("is-hidden")
         }
         card.addEventListener("mouseenter", play)
         card.addEventListener("mouseleave", pause)
@@ -180,17 +200,23 @@ function setupProjectShowcase() {
           card.removeEventListener("mouseleave", pause)
         })
 
-        const observer = new IntersectionObserver(
-          (entries) => {
-            for (const entry of entries) {
-              if (entry.isIntersecting) play()
-              else pause()
-            }
-          },
-          { threshold: 0.6 },
-        )
-        observer.observe(card)
-        cleanups.push(() => observer.disconnect())
+        // Cards with no poster keep the original scroll-into-view preview
+        // (useful on touch devices, which have no hover) — but a poster
+        // means the design intent is "static until hovered," so we don't
+        // fight that with an autoplay-on-scroll.
+        if (!posterImg) {
+          const observer = new IntersectionObserver(
+            (entries) => {
+              for (const entry of entries) {
+                if (entry.isIntersecting) play()
+                else pause()
+              }
+            },
+            { threshold: 0.6 },
+          )
+          observer.observe(card)
+          cleanups.push(() => observer.disconnect())
+        }
       }
 
       // Click to open lightbox
